@@ -1,0 +1,46 @@
+{
+  "/prices": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/catalogs": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/categories": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/countries": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/currencies": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/medias": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/products": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/stocklevels": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/stores": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/warehouses": {
+    "target": "http://localhost:8081",
+    "secure": false
+  },
+  "/websites": {
+    "target": "http://localhost:8081",
+    "secure": false
+  }
+}

@@ -1,0 +1,45 @@
+<div *ngIf="products" id="sidebar">
+  <div> <h2>{{title}}</h2></div>
+<div *ngFor="let p of products">
+  <div class="col-md-6">
+  <div class="panel panel-default heighted">
+    <div class="panel-heading">{{p.name}}</div>
+    <div class="panel-body">
+      <img class="img-thumbnail img-rounded btn" (click)="onProductDetails(p)" [src]="this.catService.host+'/products/photoProduct/'+p.id+'?ts='+getTs()"/>
+      <div *ngIf="isAdmin()" id="sidebar">
+        <button (click)="OnEditPhoto(p)">
+          <span class="glyphicon glyphicon-edit"></span>
+        </button>
+              <p *ngIf="editPhoto && currentProduct==p"id="sidebar">
+                <input type="file" (change)="onSelectedFile($event)">
+                <button class="btn btn-success " (click)="uploadPhoto()">Upload</button>
+                {{progress}}
+              </p>
+            </div>
+          <div>{{p.description}}</div>
+       <div>
+          <label> <strong> Price : {{p.price.value}} DH</strong></label>
+      </div>
+      <div>
+        <span *ngIf="p.promotion"id="sidebar">
+              <img src="assets/img/promotion.jpg" class="img-thumbnail img-circle" style=" height:30px">
+        </span>
+        <span *ngIf="p.available"id="sidebar">
+              <img src="assets/img/Available.png" class="img-thumbnail img-circle"  style=" height:30px">
+        </span>
+      </div>
+      <div>
+        <form #f="ngForm" (ngSubmit)="onAddProductToCaddy(p)">
+          <label class="control-label">Quantité :</label>
+          <input type="number" name="quantity"  ngModel style="width: 40px" [(ngModel)]="p.quantity">
+          <label></label>
+          <button>
+            <img src="assets/img/panier.png"   style=" height:25px" >
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
